@@ -10,6 +10,6 @@
 
 namespace Forme\Platine\Exception;
 
-class StackException extends PlatesException
+class StackException extends PlatineException
 {
 }

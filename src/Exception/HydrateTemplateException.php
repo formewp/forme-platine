@@ -10,6 +10,6 @@
 
 namespace Forme\Platine\Exception;
 
-class HydrateTemplateException extends PlatesException
+class HydrateTemplateException extends PlatineException
 {
 }

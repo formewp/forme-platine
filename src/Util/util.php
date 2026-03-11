@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\Util;
 
-use Forme\Platine\Util\Psr\SimpleCache\CacheInterface;
+use Psr\SimpleCache\CacheInterface;
 use Exception;
-use Forme\Platine\Exception\PlatesException;
+use Forme\Platine\Exception\PlatineException;
 use Forme\Platine\Exception\StackException;
 use Throwable;
 
@@ -155,7 +155,7 @@ function spliceArrayAtKey(array $array, string $key, array $values, $after = tru
     }
 
     if (!$spliced) {
-        throw new PlatesException('Could not find key ' . $key . ' in array.');
+        throw new PlatineException('Could not find key ' . $key . ' in array.');
     }
 
     return $new_array;

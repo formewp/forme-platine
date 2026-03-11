@@ -16,20 +16,20 @@ use Forme\Platine\Engine;
 /** The DataExtension adds the ability to hydrate data into a template before it gets rendered. */
 final class DataExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
         $c->add('data.globals', []);
         $c->add('data.template_data', []);
 
-        $plates->defineConfig(['merge_parent_data' => true]);
-        $plates->pushComposers(fn ($c): array => array_filter([
+        $platine->defineConfig(['merge_parent_data' => true]);
+        $platine->pushComposers(fn ($c): array => array_filter([
             'data.addGlobals'      => $c->get('data.globals') ? addGlobalsCompose($c->get('data.globals')) : null,
             'data.mergeParentData' => $c->get('config')['merge_parent_data'] ? mergeParentDataCompose() : null,
             'data.perTemplateData' => $c->get('data.template_data') ? perTemplateDataCompose($c->get('data.template_data')) : null,
         ]));
 
-        $plates->addMethods([
+        $platine->addMethods([
             'addGlobals' => function (Engine $e, array $data): void {
                 $c = $e->getContainer();
                 $c->merge('data.globals', $data);

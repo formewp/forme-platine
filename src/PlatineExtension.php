@@ -20,11 +20,11 @@ use function Forme\Platine\Template\matchExtensions;
 use function Forme\Platine\Template\matchStub;
 use function Forme\Platine\Util\id;
 
-final class PlatesExtension implements Extension
+final class PlatineExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
 
         $c->add('config', [
             'validate_paths'   => true,
@@ -59,7 +59,7 @@ final class PlatesExtension implements Extension
         $c->add('renderTemplate.bind', fn () => id());
         $c->add('renderTemplate.factories', fn (): array => []);
 
-        $plates->addMethods([
+        $platine->addMethods([
             'pushComposers' => function (Engine $e, $def_composer): void {
                 $e->getContainer()->wrapComposed('compose', fn ($composed, $c): array => array_merge($composed, $def_composer($c)));
             },

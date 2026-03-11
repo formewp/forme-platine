@@ -15,9 +15,9 @@ use Forme\Platine\Engine;
 
 final class PathExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
         $c->add('path.resolvePath.prefixes', fn ($c): array => (array) ($c->get('config')['base_dir'] ?? []));
         $c->addComposed('path.normalizeName', fn ($c): array => [
             'path.stripExt'    => stripExtNormalizeName(),
@@ -34,11 +34,11 @@ final class PathExtension implements Extension
                 'path.relative' => relativeResolvePath(),
             ]);
         });
-        $plates->defineConfig([
+        $platine->defineConfig([
             'ext'      => 'phtml',
             'base_dir' => null,
         ]);
-        $plates->pushComposers(fn ($c): array => [
+        $platine->pushComposers(fn ($c): array => [
             'path.normalizeName' => normalizeNameCompose($c->get('path.normalizeName')),
             'path.resolvePath'   => resolvePathCompose($c->get('path.resolvePath')),
         ]);

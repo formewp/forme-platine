@@ -16,9 +16,9 @@ use function Forme\Platine\Extension\RenderContext\assertTemplateArgsFunc;
 use function Forme\Platine\Extension\RenderContext\assertArgsFunc;
 final class LayoutSectionsExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
 
         $c->wrap('renderTemplate.factories', function ($factories, $c) {
             $default_layout_path = $c->get('config')['default_layout_path'];
@@ -31,9 +31,9 @@ final class LayoutSectionsExtension implements Extension
             return $factories;
         });
 
-        $plates->defineConfig(['default_layout_path' => null]);
-        $plates->pushComposers(fn ($c): array => ['layoutSections.sections' => sectionsCompose()]);
-        $plates->addFuncs(function ($c): array {
+        $platine->defineConfig(['default_layout_path' => null]);
+        $platine->pushComposers(fn ($c): array => ['layoutSections.sections' => sectionsCompose()]);
+        $platine->addFuncs(function ($c): array {
             $template_args = assertTemplateArgsFunc();
             $one_arg       = assertArgsFunc(1);
 

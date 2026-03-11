@@ -10,6 +10,6 @@
 
 namespace Forme\Platine\Exception;
 
-class FuncException extends PlatesException
+class FuncException extends PlatineException
 {
 }

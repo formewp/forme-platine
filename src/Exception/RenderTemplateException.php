@@ -10,6 +10,6 @@
 
 namespace Forme\Platine\Exception;
 
-class RenderTemplateException extends PlatesException
+class RenderTemplateException extends PlatineException
 {
 }

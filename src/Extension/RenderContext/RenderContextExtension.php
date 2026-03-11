@@ -17,9 +17,9 @@ use function Forme\Platine\Util\stackGroup;
 /** The render context extension provides a RenderContext object and functions to be used within the render context object. This RenderContext object is injected into the template data to allow usefulness in the templates. */
 final class RenderContextExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
         $c->addStack('renderContext.func', fn ($c): array => [
             'notFound' => notFoundFunc(),
             'plates'   => stackGroup([
@@ -60,19 +60,19 @@ final class RenderContextExtension implements Extension
             $c->get('renderContext.func')
         ));
 
-        $plates->defineConfig([
+        $platine->defineConfig([
             'render_context_var_name' => 'v',
             'escape_encoding'         => null,
             'escape_flags'            => null,
         ]);
-        $plates->pushComposers(fn ($c): array => [
+        $platine->pushComposers(fn ($c): array => [
             'renderContext.renderContext' => renderContextCompose(
                 $c->get('renderContext.factory'),
                 $c->get('config')['render_context_var_name']
             ),
         ]);
 
-        $plates->addMethods([
+        $platine->addMethods([
             'registerFunction' => function (Engine $e, $name, callable $func, ?callable $assert_args = null, $simple = true): void {
                 $c    = $e->getContainer();
                 $func = $simple ? wrapSimpleFunc($func) : $func;

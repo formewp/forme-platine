@@ -13,6 +13,6 @@ namespace Forme\Platine\Exception;
 use LogicException;
 
 /** @TODO consider extending Exception instead */
-class PlatesException extends LogicException
+class PlatineException extends LogicException
 {
 }

@@ -15,9 +15,9 @@ use Forme\Platine\Engine;
 
 final class FoldersExtension implements Extension
 {
-    public function register(Engine $plates): void
+    public function register(Engine $platine): void
     {
-        $c = $plates->getContainer();
+        $c = $platine->getContainer();
         $c->add('folders.folders', []);
         $c->wrapStack('path.resolvePath', fn ($stack, $c): array => array_merge($stack, [
             'folders' => foldersResolvePath(
@@ -30,17 +30,17 @@ final class FoldersExtension implements Extension
             'folders.stripFolders' => stripFoldersNormalizeName($c->get('folders.folders')),
         ]));
 
-        $plates->defineConfig([
+        $platine->defineConfig([
             'folder_separator' => '::',
         ]);
-        $plates->addMethods([
-            'addFolder' => function ($plates, $folder, $prefixes, $fallback = false): void {
+        $platine->addMethods([
+            'addFolder' => function ($platine, $folder, $prefixes, $fallback = false): void {
                 $prefixes = is_string($prefixes) ? [$prefixes] : $prefixes;
                 if ($fallback) {
                     $prefixes[] = '';
                 }
 
-                $plates->getContainer()->merge('folders.folders', [
+                $platine->getContainer()->merge('folders.folders', [
                     $folder => [
                         'folder'   => $folder,
                         'prefixes' => $prefixes,

@@ -40,18 +40,18 @@ final class Engine
     /** Create a configured engine and pass in an array to configure after extension registration */
     public static function createWithConfig(array $config = []): self
     {
-        $plates = new self();
+        $platine = new self();
 
-        $plates->register(new PlatesExtension());
-        $plates->register(new DataExtension());
-        $plates->register(new PathExtension());
-        $plates->register(new RenderContextExtension());
-        $plates->register(new LayoutSectionsExtension());
-        $plates->register(new FoldersExtension());
+        $platine->register(new PlatineExtension());
+        $platine->register(new DataExtension());
+        $platine->register(new PathExtension());
+        $platine->register(new RenderContextExtension());
+        $platine->register(new LayoutSectionsExtension());
+        $platine->register(new FoldersExtension());
 
-        $plates->addConfig($config);
+        $platine->addConfig($config);
 
-        return $plates;
+        return $platine;
     }
 
     public function render(string $template, array $data = [], array $attributes = []): string
