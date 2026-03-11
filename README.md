@@ -221,6 +221,7 @@ Then add to your `captainhook.json`:
 - Component prop isolation and interface declaration
 - Improve type coverage throughout
 - Add `declare(strict_types=1)` once type coverage is sufficient
+- Context aware automatic escaping (like Nette's Latte)
 
 ## Acknowledgements
 
