@@ -2,7 +2,7 @@
 
 A pure PHP templating library with layouts, components and slots.
 
-Platine is the default templating library for [Forme](https://forme.github.io), a WordPress MVC framework, but can be used in any PHP project.
+Platine is the default templating library for [Forme](https://formewp.github.io), a WordPress MVC framework, but can be used in any PHP project.
 
 ## Background
 
