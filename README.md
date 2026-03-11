@@ -217,7 +217,12 @@ Then add to your `captainhook.json`:
 
 ## Todo
 
+## Todo
+
+- Add test suite
 - Component prop isolation and interface declaration
+- Improve type coverage throughout
+- Add `declare(strict_types=1)` once type coverage is sufficient
 
 ## Acknowledgements
 
