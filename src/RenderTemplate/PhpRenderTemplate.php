@@ -26,7 +26,7 @@ final class PhpRenderTemplate implements RenderTemplate
 
     public function renderTemplate(Template $template, ?RenderTemplate $render = null)
     {
-        if (!defined('FORME_PLATES_VALIDATION') || FORME_PLATES_VALIDATION) {
+        if (!defined('FORME_PLATINE_VALIDATION') || FORME_PLATINE_VALIDATION) {
             Validator::validate($template);
         }
         $inc = $this->createInclude();

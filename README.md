@@ -191,7 +191,9 @@ $view = Engine::createWithConfig([
 
 ## Validation
 
-Platine ships with a `Validator` that enforces template coding standards. See `Validator::validateFile()`.
+Platine ships with a `Validator` that enforces template coding standards. See `Validator::validate()`.
+
+This runs by default on render, but you can switch it off by setting the global `FORME_PLATINE_VALIDATION` constant to `false`.
 
 ### Git Hook
 
