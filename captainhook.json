@@ -36,10 +36,6 @@
                 "options": []
             },
             {
-                "action": "\\Forme\\Platine\\CaptainHook\\Lint",
-                "options": []
-            },
-            {
                 "action": "composer test",
                 "options": []
             },

@@ -9,12 +9,13 @@
  */
 
 namespace Forme\Platine\Extension\RenderContext;
+use Forme\Platine\Template;
 
 use Closure;
 
 function renderContextCompose(callable $render_context_factory, $var_name)
 {
-    return function (Plates\Template $template) use ($render_context_factory, $var_name) {
+    return function (Template $template) use ($render_context_factory, $var_name) {
         $render_context = $render_context_factory($template->reference);
 
         return $template->withAddedData([

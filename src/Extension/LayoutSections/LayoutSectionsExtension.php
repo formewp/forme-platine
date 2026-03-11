@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\Extension\LayoutSections;
 
-use Forme\Platine\Extension\LayoutSections\Plates\Extension;
-use Forme\Platine\Extension\LayoutSections\Plates\Engine;
+use Forme\Platine\Extension;
+use Forme\Platine\Engine;
 use function Forme\Platine\Extension\RenderContext\assertTemplateArgsFunc;
 use function Forme\Platine\Extension\RenderContext\assertArgsFunc;
 final class LayoutSectionsExtension implements Extension

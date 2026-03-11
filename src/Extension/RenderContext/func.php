@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\Extension\RenderContext;
 
-use Forme\Platine\Extension\RenderContext\Plates\Extension\ExtensionInterface;
-use function Forme\Platine\Extension\RenderContext\Plates\Util\phpEcho;
-use function Forme\Platine\Extension\RenderContext\Plates\Util\stackGroup;
+use Forme\Platine\Extension\ExtensionInterface;
+use function Forme\Platine\Util\phpEcho;
+use function Forme\Platine\Util\stackGroup;
 use Forme\Platine\Exception\FuncException;
 use Forme\Platine\MagicResolver;
 

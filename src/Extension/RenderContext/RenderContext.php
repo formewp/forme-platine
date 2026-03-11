@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\Extension\RenderContext;
 
-use Forme\Platine\Extension\RenderContext\Plates\RenderTemplate;
-use Forme\Platine\Extension\RenderContext\Plates\TemplateReference;
-use function Forme\Platine\Extension\RenderContext\Plates\Util\stack;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\TemplateReference;
+use function Forme\Platine\Util\stack;
 use BadMethodCallException;
 
 final class RenderContext

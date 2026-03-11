@@ -10,14 +10,13 @@
 
 namespace Forme\Platine\Extension\LayoutSections;
 
-use Forme\Platine\Extension\LayoutSections\Plates\RenderTemplate\RenderTemplateDecorator;
-use Forme\Platine\Extension\LayoutSections\Plates\RenderTemplate;
-use Forme\Platine\Extension\LayoutSections\Plates\Template;
+use Forme\Platine\RenderTemplate\RenderTemplateDecorator;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\Template;
 
 final class DefaultLayoutRenderTemplate extends RenderTemplateDecorator
 {
-    public $render;
-    public function __construct(RenderTemplate $render, private $layout_path)
+    public function __construct(public RenderTemplate $render, private $layout_path)
     {
     }
 

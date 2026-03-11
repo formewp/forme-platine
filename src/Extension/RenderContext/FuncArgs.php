@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\Extension\RenderContext;
 
-use Forme\Platine\Extension\RenderContext\Plates\RenderTemplate;
-use Forme\Platine\Extension\RenderContext\Plates\TemplateReference;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\TemplateReference;
 
 final class FuncArgs
 {

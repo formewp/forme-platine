@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\Extension\Data;
 
-use Forme\Platine\Extension\Data\Plates\Extension;
-use Forme\Platine\Extension\Data\Plates\Engine;
+use Forme\Platine\Extension;
+use Forme\Platine\Engine;
 
 /** The DataExtension adds the ability to hydrate data into a template before it gets rendered. */
 final class DataExtension implements Extension

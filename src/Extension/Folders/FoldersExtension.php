@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\Extension\Folders;
 
-use Forme\Platine\Extension\Folders\Plates\Extension;
-use Forme\Platine\Extension\Folders\Plates\Engine;
+use Forme\Platine\Extension;
+use Forme\Platine\Engine;
 
 final class FoldersExtension implements Extension
 {

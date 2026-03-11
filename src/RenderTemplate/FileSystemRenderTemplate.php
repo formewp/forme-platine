@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\RenderTemplate;
 
-use Forme\Platine\RenderTemplate\Plates\RenderTemplate;
-use Forme\Platine\RenderTemplate\Plates\Template;
-use Forme\Platine\RenderTemplate\Plates\Exception\RenderTemplateException;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\Template;
+use Forme\Platine\Exception\RenderTemplateException;
 
 final readonly class FileSystemRenderTemplate implements RenderTemplate
 {

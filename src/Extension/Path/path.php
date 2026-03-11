@@ -11,10 +11,10 @@
 namespace Forme\Platine\Extension\Path;
 
 use Forme\Platine\Extension\Path\Plates\Template;
-use function Forme\Platine\Extension\Path\Plates\Util\isPath;
-use function Forme\Platine\Extension\Path\Plates\Util\isAbsolutePath;
-use function Forme\Platine\Extension\Path\Plates\Util\joinPath;
-use function Forme\Platine\Extension\Path\Plates\Util\isRelativePath;
+use function Forme\Platine\Util\isPath;
+use function Forme\Platine\Util\isAbsolutePath;
+use function Forme\Platine\Util\joinPath;
+use function Forme\Platine\Util\isRelativePath;
 
 function resolvePathCompose(callable $resolve_path)
 {

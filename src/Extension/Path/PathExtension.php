@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\Extension\Path;
 
-use Forme\Platine\Extension\Path\Plates\Extension;
-use Forme\Platine\Extension\Path\Plates\Engine;
+use Forme\Platine\Extension;
+use Forme\Platine\Engine;
 
 final class PathExtension implements Extension
 {

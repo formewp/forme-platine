@@ -10,7 +10,7 @@
 
 namespace Forme\Platine\Extension;
 
-use Forme\Platine\Extension\Plates\Extension;
+use Forme\Platine\Extension;
 
 /** @deprecated Kepts for BC */
 interface ExtensionInterface extends Extension

@@ -10,7 +10,7 @@
 
 namespace Forme\Platine\Extension\Folders;
 
-use function Forme\Platine\Extension\Folders\Plates\Util\joinPath;
+use function Forme\Platine\Util\joinPath;
 use Closure;
 use Forme\Platine\Extension\Path\ResolvePathArgs;
 

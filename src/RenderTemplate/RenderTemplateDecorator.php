@@ -10,8 +10,8 @@
 
 namespace Forme\Platine\RenderTemplate;
 
-use Forme\Platine\RenderTemplate\Plates\RenderTemplate;
-use Forme\Platine\RenderTemplate\Plates\Template;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\Template;
 
 abstract class RenderTemplateDecorator implements RenderTemplate
 {

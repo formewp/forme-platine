@@ -11,7 +11,7 @@
 namespace Forme\Platine\Extension\LayoutSections;
 
 use Forme\Platine\TemplateReference;
-use function Forme\Platine\Extension\LayoutSections\Plates\Util\obWrap;
+use function Forme\Platine\Util\obWrap;
 use Forme\Platine\Extension\RenderContext\FuncArgs;
 use Forme\Platine\Template;
 use function Forme\Platine\Extension\RenderContext\startBufferFunc;

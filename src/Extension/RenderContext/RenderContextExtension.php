@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\Extension\RenderContext;
 
-use Forme\Platine\Extension\RenderContext\Plates\Extension;
-use Forme\Platine\Extension\RenderContext\Plates\Engine;
-use function Forme\Platine\Extension\RenderContext\Plates\Util\stackGroup;
+use Forme\Platine\Extension;
+use Forme\Platine\Engine;
+use function Forme\Platine\Util\stackGroup;
 
 /** The render context extension provides a RenderContext object and functions to be used within the render context object. This RenderContext object is injected into the template data to allow usefulness in the templates. */
 final class RenderContextExtension implements Extension

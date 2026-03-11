@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\RenderTemplate;
 
-use Forme\Platine\RenderTemplate\Plates\RenderTemplate;
-use Forme\Platine\RenderTemplate\Plates\Template;
-use function Forme\Platine\RenderTemplate\Plates\Util\obWrap;
+use Forme\Platine\RenderTemplate;
+use Forme\Platine\Template;
+use function Forme\Platine\Util\obWrap;
 use Forme\Platine\Validator;
 
 final class PhpRenderTemplate implements RenderTemplate

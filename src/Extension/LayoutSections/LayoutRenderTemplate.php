@@ -10,9 +10,9 @@
 
 namespace Forme\Platine\Extension\LayoutSections;
 
-use Forme\Platine\Extension\LayoutSections\Plates\RenderTemplate\RenderTemplateDecorator;
-use Forme\Platine\Extension\LayoutSections\Plates\Template;
-use Forme\Platine\Extension\LayoutSections\Plates\RenderTemplate;
+use Forme\Platine\RenderTemplate\RenderTemplateDecorator;
+use Forme\Platine\Template;
+use Forme\Platine\RenderTemplate;
 
 final class LayoutRenderTemplate extends RenderTemplateDecorator
 {
