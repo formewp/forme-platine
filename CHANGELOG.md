@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3] - 2026-03-11
+
+### Miscellaneous Tasks
+
+- More name updates plates -> platine
+
 ## [0.0.2] - 2026-03-11
 
 ### Bug Fixes
@@ -12,6 +18,7 @@ All notable changes to this project will be documented in this file.
 
 - Readme typo
 - Fix another readme typo
+- Bump version
 
 ## [0.0.1] - 2026-03-11
 
