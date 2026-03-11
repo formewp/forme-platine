@@ -1,0 +1,34 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+;
+
+$config = new PhpCsFixer\Config();
+
+return $config->setRules([
+    '@Symfony'                           => true,
+    'yoda_style'                         => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
+    'blank_line_after_opening_tag'       => false,
+    'phpdoc_no_package'                  => false,
+    'phpdoc_to_comment'                  => false,
+    'concat_space'                       => ['spacing' => 'one'],
+    'binary_operator_spaces'             => ['default' => 'align'],
+    'increment_style'                    => ['style' => 'post'],
+    'no_leading_import_slash'            => false,
+    'blank_line_between_import_groups'   => false,
+    'global_namespace_import'            => ['import_classes' => true],
+    'header_comment'                     => [
+        'header' => <<<'EOF'
+Originally based on Plates v4 alpha by RJ Garcia
+@see https://github.com/thephpleague/plates
+
+Modified and maintained by Moussa Clarke
+@license MIT
+EOF,
+        'comment_type' => 'PHPDoc',
+        'location' => 'after_open',
+        'separate' => 'both',
+    ],
+])->setFinder($finder)
+;

@@ -1,0 +1,97 @@
+{
+    "commit-msg": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "\\Ramsey\\CaptainHook\\ValidateConventionalCommit",
+                "options": {
+                    "config": {
+                        "types": [
+                            "feat",
+                            "fix",
+                            "docs",
+                            "style",
+                            "refactor",
+                            "perf",
+                            "test",
+                            "chore",
+                            "dev"
+                        ],
+                        "typeCase": "lower",
+                        "scopeCase": "lower"
+                    }
+                }
+            }
+        ]
+    },
+    "pre-push": {
+        "enabled": false,
+        "actions": []
+    },
+    "pre-commit": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "\\CaptainHook\\App\\Hook\\PHP\\Action\\Linting",
+                "options": []
+            },
+            {
+                "action": "\\Forme\\Platine\\CaptainHook\\Lint",
+                "options": []
+            },
+            {
+                "action": "composer test",
+                "options": []
+            },
+            {
+                "action": "./scripts/php_cs_fixer.sh",
+                "options": []
+            }
+        ]
+    },
+    "prepare-commit-msg": {
+        "enabled": true,
+        "actions": [
+            {
+                "action": "\\Ramsey\\CaptainHook\\PrepareConventionalCommit",
+                "options": {
+                    "config": {
+                        "types": [
+                            "feat",
+                            "fix",
+                            "docs",
+                            "style",
+                            "refactor",
+                            "perf",
+                            "test",
+                            "chore",
+                            "dev"
+                        ],
+                        "typeCase": "lower",
+                        "scopeCase": "lower"
+                    }
+                }
+            }
+        ]
+    },
+    "post-commit": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-merge": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-checkout": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-rewrite": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-change": {
+        "enabled": false,
+        "actions": []
+    }
+}

@@ -1,0 +1,9 @@
+parameters:
+    level: 9
+    paths:
+        - src
+    phpVersion: 80300
+    checkMissingIterableValueType: true
+    checkGenericClassInNonGenericObjectType: true
+    reportUnmatchedIgnoredErrors: true
+    ignoreErrors: []

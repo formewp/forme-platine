@@ -1,0 +1,61 @@
+{
+    "name": "forme/platine",
+    "description": "A pure PHP templating library with layouts, components and slots.",
+    "license": "GPL V3",
+    "authors": [
+        {
+            "name": "Moussa Clarke",
+            "email": "moussa@moussaclarke.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "suggest": {
+        "captainhook/captainhook": "Use the Lint action to validate templates in your git hooks"
+    },
+    "autoload": {
+        "psr-4": {
+            "Forme\\Platine\\": "src/"
+        },
+        "files": [
+            "src/Template/match.php",
+            "src/Extension/Data/data.php",
+            "src/Extension/Path/path.php",
+            "src/Extension/RenderContext/func.php",
+            "src/Extension/RenderContext/render-context.php",
+            "src/Extension/LayoutSections/layout-sections.php",
+            "src/Extension/Folders/folders.php",
+            "src/Util/util.php"
+        ]
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.0",
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "pestphp/pest": "^4.0",
+        "phpstan/phpstan": "^2.0",
+        "rector/rector": "^2.0",
+        "ramsey/conventional-commits": "^1.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.3.0"
+        },
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "stan": "vendor/bin/phpstan analyse",
+        "rector:check": "vendor/bin/rector process src --dry-run",
+        "rector:fix": "vendor/bin/rector process src",
+        "cs:check": "vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "vendor/bin/php-cs-fixer fix --diff",
+        "changelog": "git cliff -o CHANGELOG.md",
+        "bump:version": "./scripts/bump.sh",
+        "hooks": "vendor/bin/captainhook install -f",
+        "post-install-cmd": "@hooks"
+    }
+}

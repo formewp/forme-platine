@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Originally based on Plates v4 alpha by RJ Garcia
+ * @see https://github.com/thephpleague/plates
+ *
+ * Modified and maintained by Moussa Clarke
+ * @license MIT
+ */
+
+namespace Forme\Platine\Extension\Data;
+
+use Forme\Platine\Extension\Data\Plates\Extension;
+use Forme\Platine\Extension\Data\Plates\Engine;
+
+/** The DataExtension adds the ability to hydrate data into a template before it gets rendered. */
+final class DataExtension implements Extension
+{
+    public function register(Engine $plates): void
+    {
+        $c = $plates->getContainer();
+        $c->add('data.globals', []);
+        $c->add('data.template_data', []);
+
+        $plates->defineConfig(['merge_parent_data' => true]);
+        $plates->pushComposers(fn ($c): array => array_filter([
+            'data.addGlobals'      => $c->get('data.globals') ? addGlobalsCompose($c->get('data.globals')) : null,
+            'data.mergeParentData' => $c->get('config')['merge_parent_data'] ? mergeParentDataCompose() : null,
+            'data.perTemplateData' => $c->get('data.template_data') ? perTemplateDataCompose($c->get('data.template_data')) : null,
+        ]));
+
+        $plates->addMethods([
+            'addGlobals' => function (Engine $e, array $data): void {
+                $c = $e->getContainer();
+                $c->merge('data.globals', $data);
+            },
+            'addGlobal' => function (Engine $e, $name, $value): void {
+                $e->getContainer()->merge('data.globals', [$name => $value]);
+            },
+            'addData' => function (Engine $e, $data, $name = null) {
+                if (!$name) {
+                    return $e->addGlobals($data);
+                }
+
+                $template_data = $e->getContainer()->get('data.template_data');
+                if (!isset($template_data[$name])) {
+                    $template_data[$name] = [];
+                }
+
+                $template_data[$name] = array_merge($template_data[$name], $data);
+                $e->getContainer()->add('data.template_data', $template_data);
+            },
+        ]);
+    }
+}

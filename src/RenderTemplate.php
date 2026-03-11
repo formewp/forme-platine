@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Originally based on Plates v4 alpha by RJ Garcia
+ * @see https://github.com/thephpleague/plates
+ *
+ * Modified and maintained by Moussa Clarke
+ * @license MIT
+ */
+
+namespace Forme\Platine;
+
+/**
+ * Converts a template into a string. The top-level RenderTemplate is passed in so that any render template
+ * can implement recursive rendering.
+ **/
+interface RenderTemplate
+{
+    /** @return string */
+    public function renderTemplate(Template $template, ?RenderTemplate $rt = null);
+}

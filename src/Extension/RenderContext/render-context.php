@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Originally based on Plates v4 alpha by RJ Garcia
+ * @see https://github.com/thephpleague/plates
+ *
+ * Modified and maintained by Moussa Clarke
+ * @license MIT
+ */
+
+namespace Forme\Platine\Extension\RenderContext;
+
+use Closure;
+
+function renderContextCompose(callable $render_context_factory, $var_name)
+{
+    return function (Plates\Template $template) use ($render_context_factory, $var_name) {
+        $render_context = $render_context_factory($template->reference);
+
+        return $template->withAddedData([
+            $var_name => $render_context,
+        ])->with('render_context', $render_context);
+    };
+}
+
+function renderContextBind()
+{
+    return fn (Closure $inc, Template $template): ?\Closure => $template->get('render_context')
+        ? $inc->bindTo($template->get('render_context'))
+        : $inc;
+}
