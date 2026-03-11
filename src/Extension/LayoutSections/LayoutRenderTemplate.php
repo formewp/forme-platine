@@ -16,7 +16,8 @@ use Forme\Platine\RenderTemplate;
 
 final class LayoutRenderTemplate extends RenderTemplateDecorator
 {
-    public $render;
+    public RenderTemplate $render;
+    
     public function renderTemplate(Template $template, ?RenderTemplate $rt = null)
     {
         $ref     = $template->reference;

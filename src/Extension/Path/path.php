@@ -10,7 +10,7 @@
 
 namespace Forme\Platine\Extension\Path;
 
-use Forme\Platine\Extension\Path\Plates\Template;
+use Forme\Platine\Template;
 use function Forme\Platine\Util\isPath;
 use function Forme\Platine\Util\isAbsolutePath;
 use function Forme\Platine\Util\joinPath;

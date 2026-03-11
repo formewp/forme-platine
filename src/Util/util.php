@@ -93,7 +93,7 @@ function pipe(...$funcs)
 
 function joinPath(array $parts, $sep = DIRECTORY_SEPARATOR): ?string
 {
-    return array_reduce(array_filter($parts), function (string $acc, $part) use ($sep): string {
+    return array_reduce(array_filter($parts), function (?string $acc, $part) use ($sep): string {
         if ($acc === null) {
             return rtrim($part, $sep);
         }
