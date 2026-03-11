@@ -217,8 +217,6 @@ Then add to your `captainhook.json`:
 
 ## Todo
 
-## Todo
-
 - Add test suite
 - Component prop isolation and interface declaration
 - Improve type coverage throughout
