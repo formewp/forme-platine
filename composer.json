@@ -1,7 +1,7 @@
 {
     "name": "forme/platine",
     "description": "A pure PHP templating library with layouts, components and slots.",
-    "license": "GPL V3",
+    "license": "MIT",
     "authors": [
         {
             "name": "Moussa Clarke",
